@@ -1,0 +1,29 @@
+{
+  "name": "iost-crypto-gusser",
+  "version": "1.0.0",
+  "description": "iost-crypto project for Android",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lam-bun/iost-crypto-gusser.git"
+  },
+  "keywords": [
+    "gusser"
+  ],
+  "author": "lambun <linbin.java@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lam-bun/iost-crypto-gusser/issues"
+  },
+  "homepage": "https://github.com/lam-bun/iost-crypto-gusser#readme",
+  "dependencies": {
+    "web3": "1.0.0-beta2",
+    "zeppelin-solidity": "1.8.0"
+  }
+}
