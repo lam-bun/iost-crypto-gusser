@@ -1,11 +1,11 @@
-pragma solidity 0.4.21;
+pragma solidity ^0.4.21;
 
 
 contract PlayerFactory {
 
     event NewUser(User user);
 
-    mapping (address => User) private addressToUser;
+    mapping (address => User) public addressToUser;
     
     struct User {
         uint id;
