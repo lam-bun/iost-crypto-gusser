@@ -1,7 +1,7 @@
 pragma solidity 0.4.21;
 
 
-contract Player {
+contract PlayerFactory {
 
     event NewUser(User user);
 
@@ -14,18 +14,6 @@ contract Player {
         uint32 battleCount;
         uint16 victoryCount;
         uint16 defeatCount;
-    }
-
-    function getUserInfo(address _address) public view returns(
-        uint id,
-        string name,
-        uint32 level,
-        uint32 battleCount,
-        uint16 victoryCount,
-        uint16 defeatCount
-    ) {
-        User memory user = addressToUser[_address];
-        return (user.id, user.name, user.level, user.battleCount, user.victoryCount, user.defeatCount);
     }
 
     function createUser(address _address, string _name) public {
