@@ -23,8 +23,8 @@ contract PlayerFactory {
 
     function _createUser(address _address, uint _id, string _name) internal {
         User memory user = User(_id, _name, 0, 0, 0, 0);
-        NewUser(user);
         addressToUser[_address] = user;
+        emit NewUser(user);
     }
 
 }
