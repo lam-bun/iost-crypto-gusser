@@ -1,5 +1,5 @@
 pragma solidity ^0.4.21;
-import "../oraclizeAPI/oraclizeAPI.sol";
+import "../oraclizeAPI/oraclizeAPI_0.5.sol";
 
 
 contract Battle is usingOraclize {
