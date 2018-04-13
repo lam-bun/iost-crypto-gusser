@@ -54,5 +54,7 @@ contract Battle is usingOraclize {
         bytes32 queryId = oraclize_newRandomDSQuery(delay, n, callbackGas); 
     }
 
-    
+    function start() {
+        
+    }
 }

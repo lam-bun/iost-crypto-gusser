@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="onLoginClickListener"
+            type="android.view.View.OnClickListener" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RadioGroup
+            android:id="@+id/rg_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rb_account_0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account 1 (Device 1)" />
+
+            <RadioButton
+                android:id="@+id/rb_account_1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Account 2 (Device 2)" />
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Copy Keystore content" />
+
+        <EditText
+            android:id="@+id/et_pub_key"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/bg_edit_text"
+            android:gravity="top|start"
+            android:inputType="text"
+            android:lines="4"
+            tools:ignore="Autofill,LabelFor" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onLoginClickListener}"
+            android:text="login" />
+
+    </LinearLayout>
+</layout>
