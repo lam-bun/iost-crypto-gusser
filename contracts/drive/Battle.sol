@@ -9,10 +9,10 @@ contract Battle is usingOraclize {
     uint8 public constant MAX_TRY_COUNT = 10;
     uint private result;
     // number of random bytes we want the datasource to return
-    uint8 private n;
+    uint8 private n = 1;
 
-    function Battle(uint8 _n) public {
-        n = _n;
+    function Battle() public {
+        OAR = OraclizeAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
         // sets the Ledger authenticity proof in the constructor
         oraclize_setProof(proofType_Ledger); 
         generateRandom();
@@ -22,7 +22,7 @@ contract Battle is usingOraclize {
     // the oraclize_randomDS_proofVerify modifier prevents an invalid proof to execute this function code:
     // the proof validity is fully verified on-chain
     function __callback(bytes32 _queryId, string _result, bytes _proof) { 
-        require(msg.sender == oraclize_cbAddress());
+        if (msg.sender != oraclize_cbAddress()) throw;
         
         if (oraclize_randomDS_proofVerify__returnCode(_queryId, _result, _proof) != 0) {
             // the proof verification has failed, do we need to take any action here? (depends on the use case)
