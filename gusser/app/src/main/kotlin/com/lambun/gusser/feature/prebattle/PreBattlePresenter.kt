@@ -1,8 +1,9 @@
 package com.lambun.gusser.feature.prebattle
 
-class PreBattlePresenter :PreBattleContract.Presenter {
-    
-    override fun connectToGusser() {
+
+class PreBattlePresenter constructor(private var view: PreBattleContract.View) : PreBattleContract.Presenter {
+
+    override fun connectToGusser(mac: String) {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
@@ -11,7 +12,7 @@ class PreBattlePresenter :PreBattleContract.Presenter {
     }
 
     override fun getNearByGusser() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+
     }
 
 }

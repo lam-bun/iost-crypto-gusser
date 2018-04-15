@@ -1,6 +1,6 @@
 package com.lambun.gusser.feature
 
-interface BaseView<in P : BasePresenter> {
+interface BaseView<P : BasePresenter> {
 
-    fun setPresenter(presenter: P)
+    fun showMessage(message: String)
 }

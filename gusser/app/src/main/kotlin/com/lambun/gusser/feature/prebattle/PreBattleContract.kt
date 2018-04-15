@@ -7,16 +7,15 @@ interface PreBattleContract {
 
     interface View : BaseView<Presenter> {
 
-        fun showNearByGusser()
     }
 
     interface Presenter : BasePresenter {
 
         fun getNearByGusser()
 
-        fun connectToGusser();
+        fun connectToGusser(mac: String)
 
-        fun startBattle();
+        fun startBattle()
     }
 
 }

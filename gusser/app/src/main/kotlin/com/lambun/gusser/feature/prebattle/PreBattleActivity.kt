@@ -1,24 +1,27 @@
 package com.lambun.gusser.feature.prebattle
 
+import android.view.View
+import com.lambun.gusser.R
 import com.lambun.gusser.databinding.ActPreBattleBinding
 import com.lambun.gusser.feature.BaseBindingActivity
 
 class PreBattleActivity : BaseBindingActivity<ActPreBattleBinding>(), PreBattleContract.View {
 
+    private lateinit var presenter: PreBattleContract.Presenter
+
     override fun initView() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        presenter = PreBattlePresenter(this)
+        getBinding().onSearchClickListener = View.OnClickListener {
+            presenter.getNearByGusser()
+        }
     }
 
     override fun getLayoutResourceId(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return R.layout.act_pre_battle
     }
 
-    override fun showNearByGusser() {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
-
-    override fun setPresenter(presenter: PreBattleContract.Presenter) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun showMessage(message: String) {
+        showToast(message)
     }
 
 }

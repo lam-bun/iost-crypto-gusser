@@ -4,10 +4,20 @@ import android.app.Application
 
 class Gusser : Application() {
 
-    private lateinit var INSTANCE: Gusser
+    companion object {
+
+        private var INSTANCE: Gusser? = null
+
+        @JvmStatic
+        fun getInstance(): Gusser {
+            return INSTANCE!!
+        }
+    }
+
 
     override fun onCreate() {
         super.onCreate()
+        INSTANCE = this
     }
 
 }
