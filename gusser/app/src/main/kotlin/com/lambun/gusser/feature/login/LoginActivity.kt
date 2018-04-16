@@ -9,6 +9,10 @@ import com.lambun.gusser.feature.prebattle.PreBattleActivity
 
 class LoginActivity : BaseBindingActivity<ActLoginBinding>() {
 
+    override fun initData() {
+
+    }
+
     override fun initView() {
         getBinding().onLoginClickListener = View.OnClickListener {
             val intent = Intent(this, PreBattleActivity::class.java)
